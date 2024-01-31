@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SignUp</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+    }
+
+    #main {
+      width: 100%;
+      height: 100%;
+      /* background-image: linear-gradient(rgb(118, 66, 66), rgb(175, 175, 62),rgb(67, 67, 218)); */
+      background-color: #B7B7B6;
+    }
+
+    .container {
+      width: 50%;
+      background-color: darkgray;
+      border-radius: 20px;
+      box-shadow: 10px 10px 10px rgba(32, 32, 49, 0.568);
+      overflow: hidden;
+    }
+
+    .card {
+      background-color: transparent;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 3px solid darkcyan;
+    }
+
+    h3 {
+      color: red;
+    }
+    #cursor {
+      z-index: 9999;
+      position:absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      will-change: transform;
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+    }
+
+    #cursor .cursor--inner {
+      width: 1vw;
+      height: 1vw;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: solid 2px white;
+      box-shadow: 10px 10px 40px salmon;
+    }
+    
+@media (max-width:800px) {
+   
+    .container{
+      width: 100%;
+    }
+    
+}
+  </style>
+  <div id="cursor">
+    <div class="cursor--inner"></div>
+  </div>
+  <div id="main">
+
+    <div class="container  py-2">
+      <h3>Make A New Account </h3>
+      <small class="small">Start Chat with Friends &nbsp; <a href="/login">Login</a></small>
+
+
+      <br><br>
+      <div class="card" style="width: 20rem ;">
+        <form action="/register" method="post">
+          <div class="mp-2 p-10">
+            <label for="exampleInputEmail1" class="form-label">username</label>
+            <input required name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              autocomplete="off" placeholder="Enter username">
+          </div>
+          <div class="mp-2">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input required name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+          </div>
+          <div class="mp-2 p-10">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input required name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Yore Name">
+          </div>
+          <div class="mp-2 p-10">
+            <label for="exampleInputEmail1" class="form-label">Photo</label>
+            <input name="pic" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              autocomplete="off" placeholder="Google img url" required>
+          </div>
+          <div class="mp-2 p-10">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input required placeholder="Enter Email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mp-2 p-10">
+            <label for="exampleInputEmail1" class="form-label">About</label>
+            <input required minlength="10" placeholder="Enter Something about you..." name="about" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <br>
+          <p align="center">
+          <button type="submit" class="btn btn-primary">Make my account</button>
+        </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/javascripts/cursor.js"></script>
+
+  <script>
+    var tl = gsap
+
+    tl.from("h3", { y: -100, duration: 1 })
+    tl.from(".card", { y: 600, duration: 1})
+  </script>
+</body>
+
+</html>

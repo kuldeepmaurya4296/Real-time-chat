@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="left">
+      <div class="navbar">
+        <div class="profile">
+          <div class="pic"><img src="/images/dp.jpeg" alt=""></div>
+        </div>
+        <div class="othernav">
+          <i class="ri-group-fill"></i>
+          <span data-testid="status-v3-unread" data-icon="status-v3-unread" class=""><svg viewBox="0 0 24 24"
+              height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1"
+              id="df9d3429-f0ef-48b5-b5eb-f9d27b2deba6" x="0px" y="0px" enable-background="new 0 0 24 24"
+              xml:space="preserve">
+              <path fill="currentColor"
+                d="M12.072,1.761c-3.941-0.104-7.579,2.105-9.303,5.65c-0.236,0.486-0.034,1.07,0.452,1.305 c0.484,0.235,1.067,0.034,1.304-0.45c1.39-2.857,4.321-4.637,7.496-4.553c0.539,0.02,0.992-0.4,1.013-0.939s-0.4-0.992-0.939-1.013 C12.087,1.762,12.079,1.762,12.072,1.761z M1.926,13.64c0.718,3.876,3.635,6.975,7.461,7.925c0.523,0.13,1.053-0.189,1.183-0.712 c0.13-0.523-0.189-1.053-0.712-1.183c-3.083-0.765-5.434-3.262-6.012-6.386c-0.098-0.53-0.608-0.88-1.138-0.782 C2.178,12.6,1.828,13.11,1.926,13.64z M15.655,21.094c3.642-1.508,6.067-5.006,6.201-8.946c0.022-0.539-0.396-0.994-0.935-1.016 c-0.539-0.022-0.994,0.396-1.016,0.935c0,0.005,0,0.009,0,0.014c-0.107,3.175-2.061,5.994-4.997,7.209 c-0.501,0.201-0.743,0.769-0.543,1.27c0.201,0.501,0.769,0.743,1.27,0.543C15.642,21.1,15.648,21.097,15.655,21.094z">
+              </path>
+              <path fill="#009588" d="M19,1.5c1.657,0,3,1.343,3,3s-1.343,3-3,3s-3-1.343-3-3S17.343,1.5,19,1.5z"></path>
+            </svg></span>
+          <i class="ri-chat-4-fill"></i>
+          <i class="ri-more-2-fill"></i>
+        </div>
+      </div>
+
+      <div class="search-group">
+        <textarea class="search">search</textarea>
+        <i class="ri-search-line"></i>
+      </div>
+
+      <div class="groups">
+        <div class="group">
+          <div class="groupname">
+            <div class="pic"><img src="/images/dp.jpeg" alt=""></div>
+            <div class="name-message">
+              <h1>Netligent</h1>
+              <p>Jay ho GuruDev</p>
+            </div>
+          </div>
+          <p>today 2pm</p>
+        </div>
+        <div class="group">
+          <div class="groupname">
+            <div class="pic"><img src="/images/dp.jpeg" alt=""></div>
+            <div class="name-message">
+              
+              <h1>Apne Yaar</h1>
+              <p>Always Think Positive</p>
+            </div>
+          </div>
+          <p>Yesterday 5pm</p>
+        </div>
+
+      </div>
+    </div>
+    <div id="right">
+
+      <div class="navbar">
+        <div class="profile">
+          <div class="back">
+            <i class="ri-arrow-left-fill"></i>
+          </div>
+          <div class="pic"><a href="/allusers"><img src="/images/dp.jpeg" alt=""></a></div>
+          <div class="about-group">
+            <h1>Netligent</h1>
+            <p style="color:rgb(0, 190, 22)">online users: <span id="online"></span></p>
+            <p></p>
+          </div>
+
+        </div>
+        <div class="othernav">
+          <i class="ri-search-line"></i>
+          <i class="ri-more-2-fill"></i>
+          <a href="/profile">Profile</a>
+        </div>
+      </div>
+
+      <div class="messages">
+        <!-- <div class="incoming">
+          <h1>Kuldeep</h1>
+          <p class="msg">Lorem ipsum dolor sit amet consectetur. Lorem, ipsum tatibus ipsam commodi reiciendis, culpa cumque at
+            temporibus expedita tenetur consequuntur iure perferendis officiis?</p>
+        </div>
+        <div class="outgoing">
+          <h1>Sonu</h1>
+          <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, debitis accusamus?.</p>
+        </div>
+        <div class="outgoing">
+          <h1>pinki</h1>
+          <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, debitis accusamus?.</p>
+        </div>
+        <div class="outgoing">
+          <h1>raju</h1>
+          <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, debitis accusamus?.</p>
+        </div>
+        <div class="outgoing">
+          <h1>Abhi</h1>
+          <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, debitis accusamus?.</p>
+        </div> -->
+
+
+      </div>
+
+
+      <div class="type-message">
+        
+        <i class="ri-emotion-happy-line"></i>
+        <i class="ri-gallery-upload-line"></i>
+        <input type="text" placeholder="Type here" class="typing">
+        <button>send</button>
+        <i class="ri-mic-fill"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- socket api  CDN -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"
+    integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+  <script src="/javascripts/whatsapp.js"></script>
+
+  <script>
+ 
+    /*function chatmanage() {
+
+      var left = document.querySelector("#left")
+      var right = document.querySelector("#right")
+      var groupname = document.querySelector(".groupname")
+      document.querySelector(".back").addEventListener("click", function () {
+        left.style.display = "inline";
+        right.style.display = "none";
+      })
+      groupname.addEventListener("click", function () {
+        right.style.display = "inline";
+        left.style.display = "none";
+      })
+    }
+    chatmanage()*/
+  </script>
+</body>
+
+</html>

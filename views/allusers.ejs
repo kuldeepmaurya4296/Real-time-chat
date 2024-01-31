@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All_Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    #main {
+        width: 100%;
+        height: fit-content;
+        /* background-image: url("https://wallpaperaccess.com/full/2314950.jpg"); */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        word-wrap: normal;
+    }
+
+    .cards {
+        width: 50%;
+        display: flex;
+    }
+
+    .card {
+        background-color: rgba(0, 255, 255, 0.756);
+        height: fit-content;
+        box-shadow: 1px 0 10px white;
+    }
+
+    .card:hover {
+        scale: 1.1;
+        transition: all .5s;
+    }
+
+    @media (max-width:800px) {
+        #main {
+            display: block;
+        }
+
+        .card {
+            width: 100%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .cards {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    hr {
+        margin: 0;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div class="container py-5 ">
+            <div class="cards" style="gap: 20px;">
+                <% allusers.forEach(function(user){ %>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<%= user.pic %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <hr>
+                            <h5 class="card-title"> Name: <%= user.name %>
+                            </h5>
+                            <hr>
+                            <h6 class="card-title">Email: <%= user.email %>
+                            </h6>
+                            <hr>
+                            <h6 class="card-title">Username: <%= user.username%>
+
+                                    <!-- <h6 class="card-title">_ID: <%= user._id %> -->
+                            </h6>
+                            <hr>
+                            <p class="card-text">About: <%= user.about %>
+                            </p>
+                            <hr>
+                            <% if(user.username===loggedInUser.username){ %>
+                                <a href="/profile">View Profile</a>
+                                <hr>
+                                <a style="color: red;" href="/delete/<%= user.username %>">delete account</a>
+                                <% } else { %>
+                                    <% if(user.friends.indexOf(loggedInUser.id) !=-1){ %>
+                                        <a href="/friend/ <%= user.id %>" class="btn btn-success">friends</a>
+                                        <% } else { %>
+
+                                            <a href="/chat" class="btn btn-primary">Start chat</a>
+                                            <hr>
+
+                                            <% } %>
+                                                <% } %>
+                        </div>
+                    </div>
+                    <% }) %>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
