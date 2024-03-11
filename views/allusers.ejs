@@ -34,24 +34,32 @@
         justify-content: center;
         word-wrap: normal;
     }
-
-    .cards {
-        width: 50%;
+    .container{
+        min-width: 100%;
+        height: 100%;
+    }
+    
+    .cards {  
+        min-width: 100%;      
         display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
     }
 
     .card {
+        width: 300px;
         background-color: rgba(0, 255, 255, 0.756);
         height: fit-content;
         box-shadow: 1px 0 10px white;
     }
 
     .card:hover {
-        scale: 1.1;
+        scale: 1.05;
         transition: all .5s;
     }
 
     @media (max-width:800px) {
+
         #main {
             display: block;
         }
@@ -78,7 +86,7 @@
         <div class="container py-5 ">
             <div class="cards" style="gap: 20px;">
                 <% allusers.forEach(function(user){ %>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" >
                         <img src="<%= user.pic %>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <hr>
